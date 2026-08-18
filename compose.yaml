@@ -1,0 +1,15 @@
+services:
+  pot-provider:
+    image: brainicism/bgutil-ytdlp-pot-provider:latest
+    restart: unless-stopped
+
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/srv/data
+      - ./app:/srv/app
+      - ./static:/srv/static
+      - ./tests:/srv/tests
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload

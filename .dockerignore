@@ -1,0 +1,8 @@
+data/
+__pycache__/
+*.pyc
+.pytest_cache/
+.git/
+.DS_Store
+README.md
+SPEC.md
