@@ -23,3 +23,8 @@ docker compose run --rm api pytest
 - Downloading needs three moving parts, all included: yt-dlp itself, a JS runtime (deno, baked into the image) for signature solving, and the `pot-provider` sidecar container that mints YouTube PO tokens. `HTTP Error 403` usually means one of the latter two is missing or the sidecar image is stale — `docker compose pull pot-provider` then `docker compose up -d`.
 - Job files live in `./data/jobs/<id>/`; dirs older than 24h are swept on startup.
 - Architecture and API contracts: see `SPEC.md`.
+
+## Documentation
+
+- **Using TubeTrim**: the [Wiki](https://github.com/CaddyDz/tubetrim/wiki) covers installing, converting, trimming, and FAQ.
+- **Developing TubeTrim**: [`docs/`](docs/README.md) has onboarding, architecture, API reference, and the development guide.
